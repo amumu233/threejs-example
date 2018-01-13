@@ -68,10 +68,12 @@ Game.prototype = {
             up: 'mouseup'
         };
         var canvas = document.querySelector('canvas');
-        canvas.addEventListener(mouseEvents.down, function(){
+        canvas.addEventListener(mouseEvents.down, function(e){
+            e.preventDefault();
             _this._handleMouseDown()
         });
-        canvas.addEventListener(mouseEvents.up, function(){
+        canvas.addEventListener(mouseEvents.up, function(r){
+            r.preventDefault();
             _this._handleMouseUp();
         });
         window.addEventListener('resize',function(){
